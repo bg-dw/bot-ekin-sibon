@@ -23,9 +23,9 @@ driver.implicitly_wait(10)
 
 time.sleep(1)
 driver.find_element(
-    'id', 'login-form__username').send_keys("197102151990071001")
+    'id', 'login-form__username').send_keys("xxxx")  # silahkan ganti xxxx dengan username ekin anda
 driver.find_element(
-    'id', 'login-form__password').send_keys("12344321")
+    'id', 'login-form__password').send_keys("yyyy")  # silahkan ganti yyyy dengan password ekin anda
 driver.find_element(
     By.XPATH, '//*[@id="login-form"]/button').click()
 driver.get("https://ekinerja.situbondokab.go.id/page/aktivitas-harian.html")
