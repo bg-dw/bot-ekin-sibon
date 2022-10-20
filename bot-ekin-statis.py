@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from openpyxl import load_workbook
 import time
 
-wb = load_workbook(filename="C:\laragon\www\python\ekin.xlsx")#file yang akan dibaca oleh python
+wb = load_workbook(filename=r"D:\Develope\bot-ekin-sibon\ekin.xlsx")#file yang akan dibaca oleh python
 
 sheet = wb['Sheet1']#sheet yang dibaca
 row_count = len(sheet['A'])
@@ -28,7 +28,7 @@ driver.find_element(
     'id', 'login-form__password').send_keys("yyyyy")  # silahkan ganti yyyy dengan password ekin anda
 driver.find_element(
     By.XPATH, '//*[@id="login-form"]/button').click()
-driver.get("https://ekinerja.situbondokab.go.id/page/aktivitas-harian.html")
+# driver.get("https://ekinerja.situbondokab.go.id/page/aktivitas-harian.html")
 driver.refresh()
 driver.get("https://ekinerja.situbondokab.go.id/page/aktivitas-harian.html")
 
@@ -36,39 +36,39 @@ print(row_count)
 # perulangan input
 i = 2
 
-while i <= row_count:
-    tgl = sheet['A'+str(i)].value
-    akt = sheet['B'+str(i)].value
-    keg = sheet['C'+str(i)].value
-    ctt = sheet['D'+str(i)].value
+# while i <= row_count:
+#     tgl = sheet['A'+str(i)].value
+#     akt = sheet['B'+str(i)].value
+#     keg = sheet['C'+str(i)].value
+#     ctt = sheet['D'+str(i)].value
 
-    try:
-        if ((i-1) != row_count):
-            driver.find_element(
-                By.XPATH, '//*[@id="main-content"]/div[1]/div[2]/article/div/div/div[2]/button').click()
-            WebDriverWait(driver, 15).until(EC.visibility_of_element_located(
-                (By.XPATH, '//*[@id="aktivitas-harian-modal"]/div/div')))
+#     try:
+#         if ((i-1) != row_count):
+#             driver.find_element(
+#                 By.XPATH, '//*[@id="main-content"]/div[1]/div[2]/article/div/div/div[2]/button').click()
+#             WebDriverWait(driver, 15).until(EC.visibility_of_element_located(
+#                 (By.XPATH, '//*[@id="aktivitas-harian-modal"]/div/div')))
 
-            driver.find_element('id', 'tgl_aktivitas').send_keys(tgl)
-            ak = Select(driver.find_element(By.ID, 'aktivitasid'))
-            ak.select_by_value(str(akt))
-            kg = Select(driver.find_element(By.ID, 'kegiatanid'))
-            kg.select_by_value(str(keg))
+#             driver.find_element('id', 'tgl_aktivitas').send_keys(tgl)
+#             ak = Select(driver.find_element(By.ID, 'aktivitasid'))
+#             ak.select_by_value(str(akt))
+#             kg = Select(driver.find_element(By.ID, 'kegiatanid'))
+#             kg.select_by_value(str(keg))
 
-            driver.find_element('id', 'catatan_aktivitas').send_keys(ctt)
-            driver.find_element('id', 'save-aktifitas').click()
+#             driver.find_element('id', 'catatan_aktivitas').send_keys(ctt)
+#             driver.find_element('id', 'save-aktifitas').click()
 
-            time.sleep(1)
-            driver.refresh()
-        else:
-            break
-    except TimeoutException:
-        print("Gagal")
+#             time.sleep(1)
+#             driver.refresh()
+#         else:
+#             break
+#     except TimeoutException:
+#         print("Gagal")
 
-    i += 1
+#     i += 1
 
-    x = i-2
-    time.sleep(2)
-    print("Input data ke-"+(str(x))+" selesai!")
-    if (x+1 == row_count):
-        print("Semua data berhasil disimpan!")
+#     x = i-2
+#     time.sleep(2)
+#     print("Input data ke-"+(str(x))+" selesai!")
+#     if (x+1 == row_count):
+#         print("Semua data berhasil disimpan!")

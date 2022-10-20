@@ -35,8 +35,7 @@ if(pil=="1"):
         'id', 'login-form__password').send_keys("yyyyy")  # silahkan ganti yyyy dengan password ekin anda
     driver.find_element(
         By.XPATH, '//*[@id="login-form"]/button').click()
-    driver.get("https://ekinerja.situbondokab.go.id/page/aktivitas-harian.html")
-    driver.refresh()
+    
     driver.get("https://ekinerja.situbondokab.go.id/page/aktivitas-harian.html")
 
     print(row_count)
