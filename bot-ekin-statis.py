@@ -17,7 +17,7 @@ sheet = wb['Sheet1']
 row_count = len(sheet['A'])
 
 driver = webdriver.Chrome()#put your web driver into directory "C:\Windows\webdriver.exe"
-driver.get("https://ekinerja.situbondokab.go.id/")
+driver.get("https://ekinerja.situbondokab.go.id/")#url tujuan untuk input data
 driver.maximize_window()
 driver.implicitly_wait(10)
 

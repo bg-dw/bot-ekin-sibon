@@ -20,7 +20,7 @@ if(pil=="1"):
     path="D:\\Develope\\bot-ekin\\"#path file yang akan dibaca
     wb = load_workbook(filename=str(path+file))#'r' refers to 'raw string'
 
-    sheet = wb['Sheet1']
+    sheet = wb['Sheet1']#sheet terpilih
     row_count = len(sheet['A'])
     
     driver = webdriver.Chrome()#put your web driver into directory "C:\Windows\webdriver.exe"
