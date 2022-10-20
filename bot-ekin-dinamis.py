@@ -21,7 +21,7 @@ if(pil=="1"):
     wb = load_workbook(filename=str(path+file))#'r' refers to 'raw string'
 
     sheet = wb['Sheet1']#sheet terpilih
-    row_count = len(sheet['A'])
+    row_count = len(sheet['A'])#menghitung panjang baris
     
     driver = webdriver.Chrome()#put your web driver into directory "C:\Windows\webdriver.exe"
     driver.get("https://ekinerja.situbondokab.go.id/")

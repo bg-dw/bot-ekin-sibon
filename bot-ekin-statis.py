@@ -13,7 +13,7 @@ import time
 
 wb = load_workbook(filename="C:\laragon\www\python\ekin.xlsx")#file yang akan dibaca oleh python
 
-sheet = wb['Sheet1']
+sheet = wb['Sheet1']#sheet yang dibaca
 row_count = len(sheet['A'])
 
 driver = webdriver.Chrome()#put your web driver into directory "C:\Windows\webdriver.exe"
