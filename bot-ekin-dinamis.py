@@ -16,8 +16,8 @@ print("1. Input E-Kin")
 print("2. Verivikasi E-Kin")
 pil = input("Masukkan Nomor: ")
 if(pil=="1"):
-    file = input("Nama File(.xls/xlsx):")
-    path="D:\\Develope\\bot-ekin\\"
+    file = input("Nama File(.xls/xlsx):")#nama file yang akan dibaca
+    path="D:\\Develope\\bot-ekin\\"#path file yang akan dibaca
     wb = load_workbook(filename=str(path+file))#'r' refers to 'raw string'
 
     sheet = wb['Sheet1']

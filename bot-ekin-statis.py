@@ -11,7 +11,7 @@ from selenium.webdriver.common.by import By
 from openpyxl import load_workbook
 import time
 
-wb = load_workbook(filename="C:\laragon\www\python\ekin.xlsx")
+wb = load_workbook(filename="C:\laragon\www\python\ekin.xlsx")#file yang akan dibaca oleh python
 
 sheet = wb['Sheet1']
 row_count = len(sheet['A'])
