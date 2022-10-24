@@ -9,6 +9,8 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.common.by import By
 
 from openpyxl import load_workbook
+import os 
+import glob
 import time
 
 print("Menu :")
@@ -16,9 +18,10 @@ print("1. Input E-Kin")
 print("2. Verivikasi E-Kin")
 pil = input("Masukkan Nomor: ")
 if(pil=="1"):
-    file = input("Nama File(.xls/xlsx):")#nama file yang akan dibaca
-    path="D:\\Develope\\bot-ekin\\"#path file yang akan dibaca
-    wb = load_workbook(filename=str(path+file))#'r' refers to 'raw string'
+    dir_path = os.path.dirname(os.path.realpath(__file__))#path untuk file bot
+    list_of_files = glob.glob(dir_path+"\*.xlsx") # * artinya semua file, *.xlsx untuk semua file dengan eksistensi tersebut
+    latest_file = max(list_of_files, key=os.path.getctime)#mendapatkan file terakhir
+    wb = load_workbook(filename=str(latest_file))#'r' refers to 'raw string'
 
     sheet = wb['Sheet1']#sheet terpilih
     row_count = len(sheet['A'])#menghitung panjang baris
