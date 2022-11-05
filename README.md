@@ -7,9 +7,18 @@ Penginputan dilakukan dengan membaca isi dari file excel, kemudian akan mengisik
 
 Hal-hal yang perlu dilakukan sebelum menggunakan bot ini :
 1. install python pada komputer anda
+   dapat di download di https://www.python.org/ftp/python/3.11.0/python-3.11.0-amd64.exe  (situs resmi python)
+
 2. install library selenium untuk mengakses browser
+   install dengan buka cmd/terminal dan ketik : pip install selenium , harap pastikan bahwa anda telah menginstall pip
+
 3. install library openpyxl untuk mengelola file excel
+   install dengan buka cmd/terminal dan ketik : pip install openpyxl
+
 4. siapkan file excel yang berisi data yang akan diinputkan kedalam website e-kin
+   file excel dapat dibuat dengan cara :
+   -buka website https://lst-test.000webhostapp.com/
+   
    nantinya file ini direncakakan akan dibuat secara otomatis melalui website "Chitesh", sehingga dapat memudahkan penyiapan file yang akan digunakan oleh bot ini.
    
 Cara menggunakan bot e-kin :
