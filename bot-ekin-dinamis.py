@@ -27,7 +27,7 @@ if(pil=="1"):
     latest_file = max(list_of_files, key=os.path.getctime)#mendapatkan file terakhir
     wb = load_workbook(filename=str(latest_file))#'r' refers to 'raw string'
 
-    sheet = wb['Sheet1']#sheet terpilih
+    sheet = wb['Sheet-ekin']#sheet terpilih
     row_count = len(sheet['A'])#menghitung panjang baris
     
     driver = webdriver.Chrome()#put your web driver into directory "C:\Windows\webdriver.exe"
